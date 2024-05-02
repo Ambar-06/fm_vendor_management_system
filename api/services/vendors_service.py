@@ -1,12 +1,21 @@
 from common.boilerplate.services.base_service import BaseService
+from common.helpers.constants import StatusCodes
+from vendor.repositories.vendor_repo import VendorRepository
 
 
 class VendorsService(BaseService):
     def __init__(self):
-        pass
+        self.vendor_repo = VendorRepository()
 
-    def get_service(self, request, data):
-        pass
+    def get_service(self):
+        vendors_data = self.vendor_repo.GetAll([], error=False)
+        return self.ok(vendors_data, StatusCodes().SUCCESS)
 
     def post_service(self, request, data):
-        pass
+        values = {
+            "name": data.get("name"),
+            "contact_details": data.get("contactDetails"),
+            "address": data.get("address"),
+        }
+        vendor_data = self.vendor_repo.Create(values)
+        return self.ok(vendor_data, StatusCodes().CREATED)
