@@ -6,3 +6,6 @@ venv
 
 # pycache
 __pycache__
+
+# sqlite database
+db.sqlite3

@@ -31,11 +31,10 @@ def validate_request(serializer: _.Type[serializers.Serializer]) -> _.Callable:
     def decorator(func: _.Callable):
         def wrapper(self, req: Request, *args, **kwargs):
             query_params = {}
-            # Ignoring extra query params with the same key name
+
             for key in req.query_params:
                 query_params[key] = req.query_params[key]
 
-            # Creating serializer from query params and request body
             _all = {**req.data, **query_params, **kwargs}
             serialized = serializer(data=_all)
 
@@ -66,7 +65,6 @@ def validate_request(serializer: _.Type[serializers.Serializer]) -> _.Callable:
                     status=StatusCodes().UNPROCESSABLE_ENTITY,
                 )
 
-            # Calling view method
             return func(self, req, serialized.data, *args)
 
         return wrapper

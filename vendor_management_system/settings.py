@@ -29,6 +29,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', False)
 
+# JWT
+JWT_SECRET = os.getenv('JWT_SECRET')
+JWT_ALGORITHM = os.getenv('JWT_ALGORITHM')
+JWT_CUSTOM_STRING = os.getenv('JWT_CUSTOM_STRING')
+JWT_EXP_DELTA_DAYS = os.getenv('JWT_EXP_DELTA_DAYS')
+
 ALLOWED_HOSTS = ["*"]
 
 
