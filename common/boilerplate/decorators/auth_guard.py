@@ -49,7 +49,7 @@ WRONG_SIGNATURE = Response(
 )
 
 
-def auth_guard(roles=None):
+def auth_guard():
     def validate_auth_user(fun: _.Callable):
         jwt_service = JWTService()
         secret_id = settings.JWT_CUSTOM_STRING

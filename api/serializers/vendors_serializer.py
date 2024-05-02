@@ -4,6 +4,8 @@ from rest_framework import serializers
 
 class VendorsViewSerializer(serializers.ModelSerializer):
 
+    id = serializers.IntegerField(source="id", read_only=True)
+    uuid = serializers.UUIDField(source="uuid", read_only=True)
     name = serializers.CharField(source="name", read_only=True)
     contactDetails = serializers.CharField(source="contact_details", read_only=True)
     address = serializers.CharField(source="address", read_only=True)
