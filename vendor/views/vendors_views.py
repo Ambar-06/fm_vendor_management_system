@@ -1,5 +1,5 @@
-from api.serializers.vendors_serializer import VendorCreationSerializer, VendorsViewSerializer
-from api.services.vendors_service import VendorsService
+from vendor.serializers.vendors_serializer import VendorCreationSerializer, VendorsViewSerializer
+from vendor.services.vendors_service import VendorsService
 from common.boilerplate.api.base_api_view import BaseAPIView
 from common.boilerplate.decorators.auth_guard import auth_guard
 from common.boilerplate.decorators.validate_request import validate_request

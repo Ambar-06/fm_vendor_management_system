@@ -1,4 +1,4 @@
-from api.util.single_vendor_request_validator import SingleVendorRequestValidator
+from vendor.util.single_vendor_request_validator import SingleVendorRequestValidator
 from common.boilerplate.services.base_service import BaseService
 from common.helpers.constants import StatusCodes
 from vendor.repositories.vendor_repo import VendorRepository

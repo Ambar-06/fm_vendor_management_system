@@ -1,1 +1,0 @@
-from .vendors_service import VendorsService
