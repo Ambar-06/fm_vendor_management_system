@@ -1,2 +1,3 @@
 from .generate_token_views import GenerateTokenViews
 from .vendors_views import VendorsViews
+from .single_vendor_views import SingleVendorViews

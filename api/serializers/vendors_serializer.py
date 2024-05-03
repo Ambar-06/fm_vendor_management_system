@@ -4,11 +4,7 @@ from rest_framework import serializers
 
 class VendorsViewSerializer(serializers.ModelSerializer):
 
-    id = serializers.IntegerField(source="id", read_only=True)
-    uuid = serializers.UUIDField(source="uuid", read_only=True)
-    name = serializers.CharField(source="name", read_only=True)
     contactDetails = serializers.CharField(source="contact_details", read_only=True)
-    address = serializers.CharField(source="address", read_only=True)
     vendorCode = serializers.CharField(source="vendor_code", read_only=True)
     onTimeDeliveryRate = serializers.FloatField(
         source="on_time_delivery_rate", read_only=True
@@ -24,6 +20,8 @@ class VendorsViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vendor
         fields = [
+            "id",
+            "uuid",
             "name",
             "contactDetails",
             "address",

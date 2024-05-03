@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-class SingleVendorDetailSerializer(serializers.ModelSerializer):
+class SingleVendorDetailSerializer(serializers.Serializer):
     
     vendorId = serializers.CharField(required=True, allow_blank=False, allow_null=False, error_messages={
         "required": "Vendor ID is required",
@@ -8,7 +8,7 @@ class SingleVendorDetailSerializer(serializers.ModelSerializer):
         "null": "Vendor ID cannot be null",
     })
     name = serializers.CharField(
-        required=True,
+        required=False,
         allow_null=True,
     )
     contactDetails = serializers.CharField(

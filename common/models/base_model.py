@@ -7,6 +7,7 @@ class BaseModelManager(models.Manager):
 
 class BaseModel(models.Model):
     id = models.BigAutoField(primary_key=True)
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     is_deleted = models.BooleanField(default=False, db_index=True)
