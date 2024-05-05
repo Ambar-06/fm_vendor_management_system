@@ -18,6 +18,6 @@ class PurchaseOrder(BaseModel):
     items = models.JSONField()
     quantity = models.IntegerField()
     status = models.CharField(max_length=255, choices=STATUS, default='pending')
-    quality_rating = models.FloatField()
+    quality_rating = models.FloatField(null=True)
     issue_date = models.DateTimeField()
     acknowledgment_date = models.DateTimeField(null=True, blank=True)
