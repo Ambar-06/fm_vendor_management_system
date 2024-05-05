@@ -20,4 +20,16 @@ class SinglePurchaseOrderView(BaseAPIView):
     @auth_guard()
     @validate_request(SinglePurchaseOrderFilterSerializer)
     def put(self, request, data, *args):
-        pass
+        service_data = self.service.update_service(request, data)
+        response_data = service_data.get("response_data")
+        status_code = service_data.get("code")
+        return self.success(response_data, status_code)
+    
+    @auth_guard()
+    @validate_request(SinglePurchaseOrderFilterSerializer)
+    def delete(self, request, data, *args):
+        service_data = self.service.delete_service(request, data)
+        response_data = service_data.get("response_data")
+        status_code = service_data.get("code")
+        return self.success(response_data, status_code)
+    
