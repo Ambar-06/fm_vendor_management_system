@@ -19,3 +19,9 @@ class StatusCodes(object):
 
 obj_status_codes = StatusCodes()
 StatusCodesDictionary = obj_status_codes.__dict__
+
+@dataclass
+class DateInputFormats(object):
+    def __init__(self):
+        self.DATE = "%Y-%m-%d"
+        self.DATETIME = "%Y-%m-%d %H:%M:%S"
