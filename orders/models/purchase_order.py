@@ -8,7 +8,7 @@ class PurchaseOrder(BaseModel):
     STATUS = (
         ('pending', 'Pending'),
         ('completed', 'Completed'),
-        ('cancelled', 'Cancelled'),
+        ('canceled', 'Canceled'),
     )
 
     po_number = models.CharField(max_length=255, db_index=True, unique=True)
